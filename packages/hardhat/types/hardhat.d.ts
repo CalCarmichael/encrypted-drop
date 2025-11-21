@@ -49,6 +49,10 @@ declare module "hardhat/types/runtime" {
       name: "FHECounter",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.FHECounter__factory>;
+    getContractFactory(
+      name: "FHEEncryptedDrop",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.FHEEncryptedDrop__factory>;
 
     getContractAt(
       name: "EthereumConfig",
@@ -95,6 +99,11 @@ declare module "hardhat/types/runtime" {
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.FHECounter>;
+    getContractAt(
+      name: "FHEEncryptedDrop",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.FHEEncryptedDrop>;
 
     deployContract(
       name: "EthereumConfig",
@@ -132,6 +141,10 @@ declare module "hardhat/types/runtime" {
       name: "FHECounter",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.FHECounter>;
+    deployContract(
+      name: "FHEEncryptedDrop",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.FHEEncryptedDrop>;
 
     deployContract(
       name: "EthereumConfig",
@@ -178,6 +191,11 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.FHECounter>;
+    deployContract(
+      name: "FHEEncryptedDrop",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.FHEEncryptedDrop>;
 
     // default types
     getContractFactory(

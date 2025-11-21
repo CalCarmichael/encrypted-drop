@@ -6,30 +6,63 @@ import { GenericContractsDeclaration } from "~~/utils/helper/contract";
 
 const deployedContracts = {
   11155111: {
-    FHECounter: {
-      address: "0xead137D42d2E6A6a30166EaEf97deBA1C3D1954e",
+    FHEEncryptedDrop: {
+      address: "0xdC4a96D063a28C30b99025075506520Aa02D52AB",
       abi: [
         {
           inputs: [
             {
-              internalType: "externalEuint32",
-              name: "inputEuint32",
-              type: "bytes32",
-            },
-            {
-              internalType: "bytes",
-              name: "inputProof",
-              type: "bytes",
+              internalType: "address",
+              name: "user",
+              type: "address",
             },
           ],
-          name: "decrement",
-          outputs: [],
-          stateMutability: "nonpayable",
+          name: "isRegistered",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
           type: "function",
         },
         {
           inputs: [],
-          name: "getCount",
+          name: "listSubmitters",
+          outputs: [
+            {
+              internalType: "address[]",
+              name: "",
+              type: "address[]",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "protocolId",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "user",
+              type: "address",
+            },
+          ],
+          name: "readEncrypted",
           outputs: [
             {
               internalType: "euint32",
@@ -44,18 +77,59 @@ const deployedContracts = {
           inputs: [
             {
               internalType: "externalEuint32",
-              name: "inputEuint32",
+              name: "payload",
               type: "bytes32",
             },
             {
               internalType: "bytes",
-              name: "inputProof",
+              name: "proof",
               type: "bytes",
             },
           ],
-          name: "increment",
+          name: "registerFlag",
           outputs: [],
           stateMutability: "nonpayable",
+          type: "function",
+        },
+      ],
+      inheritedFunctions: {},
+      deployedOnBlock: 9368216,
+    },
+  },
+  31337: {
+    FHEEncryptedDrop: {
+      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "user",
+              type: "address",
+            },
+          ],
+          name: "isRegistered",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "listSubmitters",
+          outputs: [
+            {
+              internalType: "address[]",
+              name: "",
+              type: "address[]",
+            },
+          ],
+          stateMutability: "view",
           type: "function",
         },
         {
@@ -69,6 +143,43 @@ const deployedContracts = {
             },
           ],
           stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "user",
+              type: "address",
+            },
+          ],
+          name: "readEncrypted",
+          outputs: [
+            {
+              internalType: "euint32",
+              name: "",
+              type: "bytes32",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "externalEuint32",
+              name: "payload",
+              type: "bytes32",
+            },
+            {
+              internalType: "bytes",
+              name: "proof",
+              type: "bytes",
+            },
+          ],
+          name: "registerFlag",
+          outputs: [],
+          stateMutability: "nonpayable",
           type: "function",
         },
       ],
