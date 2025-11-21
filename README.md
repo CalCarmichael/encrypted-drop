@@ -1,19 +1,30 @@
-# FHEVM React Template
+# 🚀 FHEEncryptedDrop dApp
 
-A minimal React frontend template for building FHEVM-enabled decentralized applications (dApps). This template provides a simple development interface for interacting with FHEVM smart contracts, specifically the `FHECounter.sol` contract.
+A modern React frontend for checking **encrypted airdrop eligibility** using **Fully Homomorphic Encryption (FHE)** on FHEVM. Users can securely register an encrypted flag (0 or 1) and later decrypt it to see if they are eligible, all without exposing their private inputs.
 
-## 🚀 What is FHEVM?
-
-FHEVM (Fully Homomorphic Encryption Virtual Machine) enables computation on encrypted data directly on Ethereum. This template demonstrates how to build dApps that can perform computations while keeping data private.
+---
 
 ## ✨ Features
 
-- **🔐 FHEVM Integration**: Built-in support for fully homomorphic encryption
-- **⚛️ React + Next.js**: Modern, performant frontend framework
-- **🎨 Tailwind CSS**: Utility-first styling for rapid UI development
-- **🔗 RainbowKit**: Seamless wallet connection and management
-- **🌐 Multi-Network Support**: Works on both Sepolia testnet and local Hardhat node
-- **📦 Monorepo Structure**: Organized packages for SDK, contracts, and frontend
+- 🔒 **Secure FHE Integration**: Encrypt and store user flags on-chain without revealing them.  
+- 🦊 **Wallet Connection**: Supports MetaMask and other wallets via RainbowKit.  
+- 🎲 **Eligibility Check**: Random 50/50 eligibility if user input passes validation.  
+- ✅ **Strong Validation**: Checks wallet address, email, Discord, X (Twitter), and GitHub handle.  
+- 🎆 **Animated Feedback**: Fireworks animation when eligible.  
+- 📝 **User-Friendly UI**: Beautifully animated, responsive, and intuitive form.
+
+---
+
+## 🛠️ Technologies
+
+- **React** & **Next.js (App Router)**  
+- **TypeScript**  
+- **FHEVM SDK** for encryption/decryption  
+- **RainbowKit & Wagmi** for wallet integration  
+- **Framer Motion** for animations  
+- **Tailwind CSS** for styling  
+
+---
 
 ## 📋 Prerequinextjss
 
@@ -31,7 +42,7 @@ Before you begin, ensure you have:
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd fhevm-react-template
+cd encrypted-drop
 
 # Initialize submodules (includes fhevm-hardhat-template)
 git submodule update --init --recursive
@@ -124,7 +135,7 @@ For more details, see the [MetaMask development guide](https://docs.metamask.io/
 This template uses a monorepo structure with three main packages:
 
 ```
-fhevm-react-template/
+encrypted-drop/
 ├── packages/
 │   ├── fhevm-hardhat-template/    # Smart contracts & deployment
 │   ├── fhevm-sdk/                 # FHEVM SDK package
@@ -134,8 +145,8 @@ fhevm-react-template/
 
 ### Key Components
 
-#### 🔗 FHEVM Integration (`packages/nextjs/hooks/fhecounter-example/`)
-- **`useFHECounterWagmi.tsx`**: Example hook demonstrating FHEVM contract interaction
+#### 🔗 FHEVM Integration (`packages/nextjs/hooks`)
+- **`useFHEEncryptedDrop.ts`**: Example hook demonstrating FHEVM contract interaction
 - Essential hooks for FHEVM-enabled smart contract communication
 - Easily copyable to any FHEVM + React project
 
