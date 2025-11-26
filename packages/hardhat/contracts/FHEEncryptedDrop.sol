@@ -2,14 +2,14 @@
 pragma solidity ^0.8.24;
 
 import {FHE, euint32, externalEuint32} from "@fhevm/solidity/lib/FHE.sol";
-import {SepoliaConfig} from "@fhevm/solidity/config/ZamaConfig.sol";
+import {ZamaEthereumConfig} from "@fhevm/solidity/config/ZamaConfig.sol";
 
 /**
  * @title FHEEncryptedDrop
  * @dev Lightweight encrypted flag registry using FHE technology.
  *      Each address can register a single encrypted value (0 or 1).
  */
-contract FHEEncryptedDrop is SepoliaConfig {
+contract FHEEncryptedDrop is ZamaEthereumConfig {
     
     /// @dev Stores encrypted flags for each user.
     mapping(address => euint32) private encryptedFlags;

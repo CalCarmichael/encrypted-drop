@@ -23,23 +23,23 @@ import type {
 export interface FHEEncryptedDropInterface extends Interface {
   getFunction(
     nameOrSignature:
+      | "confidentialProtocolId"
       | "isRegistered"
       | "listSubmitters"
-      | "protocolId"
       | "readEncrypted"
       | "registerFlag"
   ): FunctionFragment;
 
+  encodeFunctionData(
+    functionFragment: "confidentialProtocolId",
+    values?: undefined
+  ): string;
   encodeFunctionData(
     functionFragment: "isRegistered",
     values: [AddressLike]
   ): string;
   encodeFunctionData(
     functionFragment: "listSubmitters",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "protocolId",
     values?: undefined
   ): string;
   encodeFunctionData(
@@ -52,6 +52,10 @@ export interface FHEEncryptedDropInterface extends Interface {
   ): string;
 
   decodeFunctionResult(
+    functionFragment: "confidentialProtocolId",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "isRegistered",
     data: BytesLike
   ): Result;
@@ -59,7 +63,6 @@ export interface FHEEncryptedDropInterface extends Interface {
     functionFragment: "listSubmitters",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "protocolId", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "readEncrypted",
     data: BytesLike
@@ -113,11 +116,11 @@ export interface FHEEncryptedDrop extends BaseContract {
     event?: TCEvent
   ): Promise<this>;
 
+  confidentialProtocolId: TypedContractMethod<[], [bigint], "view">;
+
   isRegistered: TypedContractMethod<[user: AddressLike], [boolean], "view">;
 
   listSubmitters: TypedContractMethod<[], [string[]], "view">;
-
-  protocolId: TypedContractMethod<[], [bigint], "view">;
 
   readEncrypted: TypedContractMethod<[user: AddressLike], [string], "view">;
 
@@ -132,14 +135,14 @@ export interface FHEEncryptedDrop extends BaseContract {
   ): T;
 
   getFunction(
+    nameOrSignature: "confidentialProtocolId"
+  ): TypedContractMethod<[], [bigint], "view">;
+  getFunction(
     nameOrSignature: "isRegistered"
   ): TypedContractMethod<[user: AddressLike], [boolean], "view">;
   getFunction(
     nameOrSignature: "listSubmitters"
   ): TypedContractMethod<[], [string[]], "view">;
-  getFunction(
-    nameOrSignature: "protocolId"
-  ): TypedContractMethod<[], [bigint], "view">;
   getFunction(
     nameOrSignature: "readEncrypted"
   ): TypedContractMethod<[user: AddressLike], [string], "view">;

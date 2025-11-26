@@ -1,6 +1,6 @@
 # 🚀 FHEEncryptedDrop dApp
 
-A modern React frontend for checking **encrypted airdrop eligibility** using **Fully Homomorphic Encryption (FHE)** on FHEVM. Users can securely register an encrypted flag (0 or 1) and later decrypt it to see if they are eligible, all without exposing their private inputs.
+A modern React frontend for checking **encrypted airdrop eligibility** using **Fully Homomorphic Encryption (FHE)** on FHEVM. Users can securely register an encrypted flag and later decrypt it to see if they are eligible, all without exposing their private inputs.
 
 ---
 
@@ -8,7 +8,6 @@ A modern React frontend for checking **encrypted airdrop eligibility** using **F
 
 - 🔒 **Secure FHE Integration**: Encrypt and store user flags on-chain without revealing them.  
 - 🦊 **Wallet Connection**: Supports MetaMask and other wallets via RainbowKit.  
-- 🎲 **Eligibility Check**: Random 50/50 eligibility if user input passes validation.  
 - ✅ **Strong Validation**: Checks wallet address, email, Discord, X (Twitter), and GitHub handle.  
 - 🎆 **Animated Feedback**: Fireworks animation when eligible.  
 - 📝 **User-Friendly UI**: Beautifully animated, responsive, and intuitive form.
